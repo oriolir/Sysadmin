@@ -1,0 +1,12 @@
+$TTL 3H
+@	IN SOA oriolir.info. root.oriolir.info. (
+					4	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+	IN	NS	dhcp.oriolir.info.
+
+1.	IN	PTR	dhcp.oriolir.info.
+3.	IN	PTR	nagios.oriolir.info.
+4.	IN	PTR	openiam.oriolir.info.
