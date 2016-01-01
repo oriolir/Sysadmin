@@ -1,2 +1,2 @@
-vi /etc/sysctl.conf
+vi /etc/sysctl.d/99-forwardingconf
   net.ipv4.ip_forward = 1
