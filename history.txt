@@ -1,0 +1,900 @@
+    1  systemctl hostname dhcp
+    2  systemctl set-hostname dhcp
+    3  man systemctl
+    4  man hostnamectl 
+    5  clear
+    6  hostnamectl set-hostname dhcp
+    7  yum update
+    8  init 6
+    9  yum search dhcp
+   10  yum search all dhcp
+   11  man yum
+   12  yum search all isc
+   13  yum search all isc | more
+   14  yum search all dhcp3 | more
+   15  yum search all dhcpd | more
+   16  systemctl status dhcpd.service
+   17  yum install dhcp
+   18  route -n
+   19  init 0
+   20  yum search virtualbox
+   21  yum search all virtualbox
+   22  vi /etc/dhcp/dhcpd.conf 
+   23  cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 
+   24  vi /etc/dhcp/dhcpd.conf 
+   25  systemctl start dhcpd.service
+   26  ps -fea | grep dhcpd
+   27  yum search bind
+   28  yum search bind | less
+   29  yum install bind
+   30  vi /etc/named.conf 
+   31  systemctl enable dhcpd
+   32  vi /etc/named.conf 
+   33  vi /var/named/named.empty 
+   34  cp /var/named/named.empty /var/named/oriolir
+   35  vi /var/named/oriolir 
+   36  ll /var/named/
+   37  cp /var/named/oriolir /var/named/0.0.10.db
+   38  vi /var/named/0.0.10.db 
+   39  yum install network-tools
+   40  yum search network | less
+   41  yum install net-tools
+   42  vi /etc/resolv.conf 
+   43  systemctl start bind
+   44  systemctl start named
+   45  systemctl status named
+   46  cat /etc/named.conf 
+   47  ll /var/named/
+   48  chown named:named /var/named/*
+   49  systemctl start named
+   50  systemctl status named
+   51  journalctl -xn 
+   52  vi /etc/named.conf 
+   53  vi /var/named/oriolir 
+   54  tail -f /var/log/messages 
+   55  vi /var/named/0.0.10.db 
+   56  vi /var/named/oriolir 
+   57  tail -f /var/log/messages 
+   58  bg
+   59  systemctl start named
+   60  vi /var/named/oriolir 
+   61  systemctl start named
+   62  named-checkzone /var/named/oriolir 
+   63  named-checkconf 
+   64  named-checkzone /var/named/oriolir /etc/named.conf 
+   65  named-checkzone /var/named/oriolir /etc/named.conf | less
+   66  vi /etc/named.conf 
+   67  init 0
+   68  vi /etc/named.conf 
+   69  ll /var/named/
+   70  vi /var/named/oriolir 
+   71  systemctl restart named
+   72  journalctl -xn
+   73  vi /etc/named.conf 
+   74  systemctl restart named
+   75  yum install dig
+   76  yum search dig
+   77  yum search dig | less
+   78  rpm -q net-tools
+   79  yum install bind-utils
+   80  dig dns
+   81  ifconfig 
+   82  cat /etc/resolv.conf 
+   83  vi /etc/resolv.conf 
+   84  systemctl restart network
+   85  dig dns
+   86  dig dns.oriolir.info
+   87  cat /etc/resolv.conf 
+   88  vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+   89  vi /etc/sysconfig/network-scripts/ifcfg-enp0s8 
+   90  vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+   91  vi /etc/resolv.conf 
+   92  systemctl stop networkmanager
+   93  systemctl stop NetworkManager
+   94  systemctl disable NetworkManager
+   95  man yum
+   96  yum remove NetworkManager
+   97  cat /etc/resolv.conf 
+   98  systemctl restart network
+   99  systemctl enable dhcpd
+  100  systemctl enable named
+  101  ps -fea | grep dhcp
+  102  cat /etc/resolv.conf 
+  103  dig dns
+  104  dig dns.oriolir.info
+  105  vi /var/named/oriolir 
+  106  systemctl restart named
+  107  dig dns.oriolir.info
+  108  vi /var/named/oriolir 
+  109  systemctl restart named
+  110  dig dns.oriolir.info
+  111  ping -a dns.oriolir.info
+  112  vi /var/named/
+  113  vi /var/named/oriolir 
+  114  systemctl restart named
+  115  vi /etc/resolv.conf 
+  116  ping dns
+  117  ping www.google.es
+  118  dig www.google.es
+  119  dig dns
+  120  dig dns.oriolir.info
+  121  dig dns
+  122  ping www.google.es
+  123  cat /etc/named.conf | grep log
+  124  vi /etc/named.conf
+  125  tail /var/named/data/named.run 
+  126  ping 192.168.1.1
+  127  nslookup 
+  128  ping 8.8.8.8
+  129  route
+  130  route add 0.0.0.0 via enp0s3
+  131  man route
+  132  man ip
+  133  ip route
+  134  ip route add
+  135  ip route -help
+  136  ip route help
+  137  ip route help | less
+  138  ip route add help | less
+  139  ip route add 0.0.0.0 enp0s3
+  140  ip route add 0.0.0.0 192.168.1.100
+  141  ip route add 0.0.0.0 
+  142  ip route add enp0s3 0.0.0.0 
+  143  ip route add 0.0.0.0 
+  144  route add default gw 0.0.0.0 ep0s3
+  145  route add default gw 0.0.0.0 enp0s3
+  146  route add 0.0.0.0 dev enp0s3
+  147  route -n
+  148  ping -c 2 8.8.8.8
+  149  route add 0.0.0.0/0 dev enp0s3
+  150  route del 0.0.0.0
+  151  route add 0.0.0.0/0 dev enp0s3
+  152  route -n
+  153  vi /etc/sysconfig/network
+  154  systemctl restart network
+  155  route -n
+  156  ping -c 2 8.8.8.8
+  157  dig www.google.es
+  158  vi /var/named/0.0.10.db 
+  159  systemctl restart named
+  160  journalctl -xn
+  161  vi /var/named/0.0.10.db 
+  162  systemctl restart named
+  163  journalctl -xn
+  164  systemctl restart named
+  165  systemctl status named
+  166  cat /var/named/oriolir 
+  167  vi /var/named/0.0.10.db 
+  168  named-checkconf 
+  169  named-checkconf 0.0.10.in-addr.arpa /var/named/0.0.10.db 
+  170  named-checkzone 0.0.10.in-addr.arpa /var/named/0.0.10.db 
+  171  vi /var/named/0.0.10.db 
+  172  named-checkzone 0.0.10.in-addr.arpa /var/named/0.0.10.db 
+  173  systemctl restart named
+  174  dig dns
+  175  dig dns.oriolir.info
+  176  dig 10.0.0.1
+  177  vi /var/named/0.0.10.db 
+  178  dig 10.0.0.1
+  179  systemctl restart named
+  180  dig 10.0.0.1
+  181  init 0
+  182  vi /etc/dhcp/dhcpd.conf 
+  183  vi /etc/named.conf 
+  184  systemctl restart named
+  185  dig dns
+  186  cat /etc/resolv.conf 
+  187  ps -fea | grep named
+  188  netstat
+  189  netstat | grep named
+  190  netstat | grep 53
+  191  ps -fea | grep named
+  192  journalctl -xn
+  193  systemctl restart named
+  194  journalctl -xn
+  195  dig dns
+  196  yum search nmap
+  197  yum install nmap
+  198  route -n
+  199  ping 192.168.1.1
+  200  cat /etc/resolv.conf 
+  201  systemctl stop firewalld
+  202  systemctl disable firewalld
+  203  nslookup
+  204  vi /etc/named.conf 
+  205  systemctl restart named
+  206  dig dns
+  207  vi /etc/dhcp/dhcpd.conf 
+  208  init 6
+  209  ps -fea | grep dhcp
+  210  vi /etc/dhcp/dhcpd.conf 
+  211  systemctl restart dhcpd
+  212  journalctl -xn
+  213  systemctl status dhcpd
+  214  vi /etc/dhcp/dhcpd.conf 
+  215  systemctl restart dhcpd
+  216  vi /etc/dhcp/dhcpd.conf 
+  217  systemctl restart dhcpd
+  218  vi /proc/net/route 
+  219  vi /proc/net/ipv6_route 
+  220  vi /proc/sys/net/ipv4/ip_forward
+  221  ll /proc/sys/net/ipv4/ip_forward
+  222  cat /proc/sys/net/ipv4/ip_forward
+  223  echo "1" > /proc/sys/net/ipv4/ip_forward
+  224  cat /proc/sys/net/ipv4/ip_forward
+  225  ping -c 2 www.google.es
+  226  vi /etc/sysctl.conf 
+  227  service network restart
+  228  cat /proc/sys/net/ipv4/ip_forward
+  229  systemctl start firewalld
+  230  iptables -L
+  231  iptables --flush
+  232  iptables -L
+  233  iptables --table nat --flush
+  234  iptables --delete-chain
+  235  iptables --table nat --delete-chain
+  236  iptables --table nat --append POSTROUTING --out-interface enp0s3 -j MASQUERADE
+  237  iptables --append FORWARD --in-interface enp0s8 -j ACCEPT
+  238  iptable --table nat -L
+  239  iptables --table nat -L
+  240  man iptables
+  241  iptables-save 
+  242  systemctl restart firewalld
+  243  ll
+  244  date
+  245  iptables -L
+  246  iptables --table nat -L
+  247  history
+  248  iptables --flush
+  249  iptables --table nat --flush
+  250  iptables --delete-chain
+  251  iptables --table nat --delete-chain
+  252  iptables --table nat --append POSTROUTING --out-interface enp0s3 -j MASQUERADE
+  253  iptables --append FORWARD --in-interface enp0s8 -j ACCEPT
+  254  ps -fea | grep fire
+  255  ps -fea | grep ipta
+  256  systemctl save firewalld
+  257  init 0
+  258  vi /etc/dhcp/dhcpd.conf 
+  259  vi /etc/named.conf 
+  260  vi /etc/named.iscdlv.key 
+  261  vi /etc/named.key
+  262  dnssec-keygen -a hmac-md5 -b 128 -n USER DHCP_UPDATER
+  263  ll
+  264  pwd
+  265  cd /tmp/
+  266  dnssec-keygen -a hmac-md5 -b 128 -n USER DHCP_UPDATER
+  267  dnssec-keygen -a md5 -b 128 -n USER DHCP_UPDATER
+  268  man dnssec-keygen
+  269  dnssec-keygen -a md5 -b 128 -n USER DHCP_UPDATER
+  270  dnssec-keygen -a hmac-md5 -b 128 -n ZONE oriolir.info
+  271  dnssec-keygen -a hmac-md5 -b 128 -n USER oriolir.info
+  272  dnssec-keygen -n USER oriolir.info
+  273  dnssec-keygen -n ZONE oriolir.info
+  274  init 0
+  275  vi /etc/dhcp/dhcpd.conf 
+  276  yum search nfs-utils
+  277  man dhcpd.conf
+  278  vi /etc/named.conf 
+  279  ll /etc/named*
+  280  vi /etc/dhcp/dhcpd.conf 
+  281  man dhcp-options
+  282  vi /etc/dhcp/dhcpd.conf 
+  283  man dhcpd.conf
+  284  ps -fea | grep named
+  285  systemctl enable named.service
+  286  systemctl start named
+  287  systemctl status named
+  288  named-checkconf /etc/named.conf 
+  289  vi /etc/named.conf 
+  290  ll /etc/named.root.key 
+  291  cat /etc/named.root.key 
+  292  history
+  293  dnssec-keygen -a hmac-md5 -b 128 -n USER oriolir.info
+  294  bg
+  295  top
+  296  job
+  297  fg
+  298  job
+  299  ll
+  300  cat Koriolir.info.+157+61460.key 
+  301  mv Koriolir.info.+157+61460.key /etc/named.oriolir.info.key
+  302  vi /etc/named.oriolir.info.key 
+  303  vi /etc/named.conf 
+  304  systemctl start named
+  305  named-checkconf /etc/named.conf 
+  306  vi /etc/named.conf 
+  307  vi /etc/named.oriolir.info.key 
+  308  named-checkconf /etc/named.conf 
+  309  systemctl start named
+  310  systemctl status named
+  311  journalctl -xn
+  312  ps -fea | grep named
+  313  journalctl -xn | more
+  314  vi /etc/dhcp/dhcpd.conf 
+  315  systemctl start named
+  316  journalctl -xn
+  317  ll /etc/named*
+  318  chmod 644 /etc/named.oriolir.info.key 
+  319  ll /etc/named*
+  320  systemctl start named
+  321  journalctl -xn
+  322  ll /etc/named*
+  323  chmod 644 /etc/named.conf 
+  324  systemctl start named
+  325  journalctl -xn
+  326  vi /etc/named.conf 
+  327  ll /etc/named.*
+  328  chown root:named /etc/named.oriolir.info.key 
+  329  systemctl start named
+  330  journalctl -xn
+  331  chmod 666 /etc/named.oriolir.info.key 
+  332  systemctl start named
+  333  systemctl restart dhcpd
+  334  journalctl -xn
+  335  systemctl status dhcpd
+  336  vi /etc/dhcp/dhcpd.conf 
+  337  vi /etc/named.conf 
+  338  vi /etc/dhcp/dhcpd.conf 
+  339  systemctl restart dhcpd
+  340  journalctl -xn
+  341  systemctl status dhcpd
+  342  systemctl status dhcpd -l
+  343  ll /etc/named*
+  344  systemctl restart dhcpd
+  345  systemctl status dhcpd -l
+  346  journalctl -xn
+  347  systemctl restart dhcpd
+  348  systemctl status dhcpd
+  349  systemctl status dhcpd -l
+  350  systemctl stop dhcpd
+  351  systemctl start dhcpd
+  352  systemctl status dhcpd -l
+  353  date
+  354  cp /etc/named.oriolir.info.key /etc/dhcp/dhcp.oriolir.info.key
+  355  ll /etc/dhcp/
+  356  systemctl start dhcpd
+  357  vi /etc/dhcp/dhcpd.conf 
+  358  systemctl start dhcpd
+  359  systemctl status dhcpd
+  360  systemctl status dhcpd -l
+  361  vi /etc/dhcp/dhcpd.conf 
+  362  vi /etc/dhcp/dhcpd.o
+  363  vi /etc/dhcp/dhcp.oriolir.info.key 
+  364  systemctl start dhcpd
+  365  systemctl status dhcpd -l
+  366  vi /etc/dhcp/dhcpd.conf 
+  367  vi /etc/dhcp/dhcp.oriolir.info.key 
+  368  systemctl start dhcpd
+  369  systemctl status dhcpd -l
+  370  vi /etc/dhcp/dhcp.oriolir.info.key 
+  371  systemctl start dhcpd
+  372  systemctl status dhcpd -l
+  373  vi /etc/dhcp/dhcp.oriolir.info.key 
+  374  vi /etc/dhcp/dhcpd.conf 
+  375  systemctl status dhcpd -l
+  376  dhcpd -cf /etc/dhcp/dhcpd.conf eth1
+  377  dhcpd -cf /etc/dhcp/dhcpd.conf eth1 | more
+  378  dhcpd -cf /etc/dhcp/dhcpd.conf eth1 > /tmp/dhcp
+  379  ll /tmp/
+  380  vi /tmp/dhcp 
+  381  dhcpd -cf /etc/dhcp/dhcpd.conf > /tmp/dhcp
+  382  ll /tmp/
+  383  dhcpd -cf /etc/dhcp/dhcpd.conf | less
+  384  dhcpd -cf /etc/dhcp/dhcpd.conf | more
+  385  dhcpd -cf /etc/dhcp/dhcpd.conf
+  386  vi /etc/dhcp/dhcpd.conf 
+  387  dhcpd -cf /etc/dhcp/dhcpd.conf
+  388  cat /etc/dhcp/dhcp.oriolir.info.key
+  389  vi /etc/dhcp/dhcpd.conf 
+  390  dhcpd -cf /etc/dhcp/dhcpd.conf
+  391  vi /etc/dhcp/dhcp.oriolir.info.key 
+  392  dhcpd -cf /etc/dhcp/dhcpd.conf
+  393  vi /etc/dhcp/dhcpd.conf 
+  394  dhcpd -cf /etc/dhcp/dhcpd.conf
+  395  systemctl start dhcpd
+  396  systemctl start named
+  397  systemctl status named -l
+  398  vi /etc/named.conf 
+  399  ll /etc/named*
+  400  vi /etc/named.conf 
+  401  systemctl start named
+  402  systemctl status named -l
+  403  init 6
+  404  ps -fea | grep dhcp
+  405  ps -fea | grep named
+  406  systemctl status named -l
+  407  ll /
+  408  ll /etc/named*
+  409  named-checkconf /etc/named.conf 
+  410  systemctl status named -l
+  411  cat /etc/selinux/config 
+  412  vi /etc/selinux/config 
+  413  systemctl start named
+  414  init 6
+  415  ps -fea | grep anmed
+  416  ps -fea | grep named
+  417  ping config
+  418  tail -f /var/log/messages 
+  419  nslookup
+  420  tail -f /var/log/lastlog 
+  421  tail -f /var/log/messages 
+  422  ll /var
+  423  ll /var/named
+  424  vi /etc/named.conf 
+  425  ll /var/named/
+  426  ll /etc/named*
+  427  vi /etc/named.conf 
+  428  systemctl restart named
+  429  mv /var/named/oriolir /var/named/slaves/
+  430  mv /var/named/0.0.10.db /var/named/slaves/
+  431  systemctl restart named
+  432  tail -f /var/log/messages 
+  433  nslookup 
+  434  init 0
+  435  history
+  436  exit
+  437  ps -fea | grep named
+  438  ps -fea | grep dhcpd
+  439  ps -fea | gre ssh
+  440  ps -fea | grep ssh
+  441  netstat
+  442  netstat | grep 22
+  443  init 0
+  444  ifc
+  445  ifconfig 
+  446  ps -fea | grep dhcp
+  447  ps -fea | grep named
+  448  cat /proc/sys/net/ipv4/ip_forward
+  449  ps -fea | grep itables
+  450  ps -fea | grep firewall
+  451  systemctl start firewalld
+  452  ps -fea | grep firewall
+  453  systemctl enable firewalld
+  454  iptables -table nat -L
+  455  iptables --table nat -L
+  456  iptables-restore 
+  457  ll
+  458  iptables-restore ip_forward~ 
+  459  iptables-restore ip_forwarz~ 
+  460  init 0
+  461  history | grep iptables
+  462  history | grep iptables > iptables
+  463  vi iptables 
+  464  sh iptables 
+  465  iptables -L
+  466  iptables --table nat -L
+  467  cat /etc/sysconfig/firewalld 
+  468  cat /etc/sysconfig/iptables-config 
+  469  vi /etc/sysconfig/iptables-config 
+  470  systemctl status iptables
+  471  vi /etc/sysconfig/iptables
+  472  iptables -L
+  473  cat iptables 
+  474  iptables --flush
+  475  iptables --table nat --flush
+  476  iptables --table nat --delete-chain
+  477  iptables --delete-chain
+  478  iptables --table nat --append POSTROUTING --out-interface enp0s3 -j MASQUERADE
+  479  iptables --append FORWARD --in-interface enp0s8 -j ACCEPT
+  480  iptables-save 
+  481  ll
+  482  firewall-cmd 
+  483  vi iptables 
+  484  mv iptables /etc/sysconfig/
+  485  systemctl restart firewalld
+  486  iptables -L
+  487  iptables --table nat -L
+  488  iptables --table nat -L | less
+  489  yum search iptables
+  490  yum install iptables-services
+  491  systemctl sto firewalld
+  492  systemctl stop firewalld
+  493  systemctl disable firewalld
+  494  systemctl start iptables
+  495  systemctl status iptables
+  496  systemctl status iptables -l
+  497  iptables-restore 
+  498  man iptables-restore
+  499  iptables-restore -t
+  500  iptables-save 
+  501  systemctl start iptables
+  502  systemctl status iptables -l
+  503  vi /etc/sysconfig/iptables
+  504  systemctl start iptables
+  505  man iptables
+  506  systemctl status iptables -l
+  507  vi /etc/sysconfig/iptables
+  508  systemctl start iptables
+  509  vi /etc/sysconfig/iptables
+  510  systemctl start iptables
+  511  journalctl -xn
+  512  iptables -L
+  513  iptables --table nat -L
+  514  vi /etc/sysconfig/iptables
+  515  systemctl start iptables
+  516  journalctl -xn
+  517  rm /etc/sysconfig/iptables
+  518  systemctl start iptables
+  519  history
+  520  history | grep iptables
+  521  history | grep iptables | less
+  522  iptables --table nat --append POSTROUTING --out-interface enp0s3 -j MASQUERADE
+  523  iptables --append FORWARD --in-interface enp0s8 -j ACCEPT
+  524  iptables-save > iptables
+  525  mv iptables /etc/sysconfig/
+  526  systemctl restart iptables
+  527  iptables --table nat -L
+  528  iptables -L
+  529  systemctl status iptables
+  530  cat /etc/sysconfig/iptables
+  531  iptables-restore < /etc/sysconfig/iptables
+  532  iptables -L
+  533  iptables --table nat -L
+  534  systemctl enable iptables
+  535  init 6
+  536  init 0
+  537  hostname
+  538  nslookup dhcp
+  539  init 0
+  540  yum install openldap-servers
+  541  yum install openldap-servers openldap-clients
+  542  init 0
+  543  cd /tmp/
+  544  ll
+  545  vi inicial3.ldif 
+  546  ldapadd -Y EXTERNAL -H ldapi:/// -f inicial3.ldif 
+  547  init 0
+  548  clear
+  549  history
+  550  slappasswd 
+  551  vi /etc/openldap/ldap.conf 
+  552  systemctl enable ldap
+  553  journalctl -xn
+  554  systemctl enable sldap
+  555  systemctl sstart slapd
+  556  systemctl start slapd
+  557  systemctl enable slapd
+  558  vi /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}hdb.ldif 
+  559  cp /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}hdb.ldif /tmp
+  560  cd /tmp
+  561  ll
+  562  vi olcDatabase\=\{2\}hdb.ldif 
+  563  ldapmodify -H ldapi:// < olcDatabase\=\{2\}hdb.ldif 
+  564  vi olcDatabase\=\{2\}hdb.ldif 
+  565  ldapmodify -H ldapi:// < olcDatabase\=\{2\}hdb.ldif 
+  566  vi olcDatabase\=\{2\}hdb.ldif 
+  567  ldapmodify -H ldapi:// < olcDatabase\=\{2\}hdb.ldif 
+  568  vi olcDatabase\=\{2\}hdb.ldif 
+  569  vi /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}hdb.ldif 
+  570  yum install ldapvi
+  571  mv olcDatabase\=\{2\}hdb.ldif inicial.ldif
+  572  vi inicial.ldif 
+  573  ldapmodify -H ldapi:// < inicial.ldif 
+  574  vi inicial.ldif 
+  575  ldapmodify -H ldapi:// < inicial.ldif 
+  576  ldapmodify -H -Y EXTERNAL ldapi:// < inicial.ldif 
+  577  ldapmodify -H ldapi:// -Y EXTERNAL < inicial.ldif 
+  578  cat /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}hdb.ldif 
+  579  vi inicial.ldif 
+  580  ldapmodify -H ldapi:// < inicial.ldif 
+  581  journalctl -xn
+  582  ldapmodify -H ldapi:// < inicial.ldif 
+  583  journalctl -xn
+  584  ldapmodify -H ldapi:// -Y EXTERNAL < inicial.ldif 
+  585  journalctl -xn
+  586  vi inicial.ldif 
+  587  ldapmodify -H ldapi:// -Y EXTERNAL < inicial.ldif 
+  588  vi /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}hdb.ldif 
+  589  vi inicial.ldif 
+  590  ldapmodify -H ldapi:// < inicial.ldif 
+  591  ldapmodify -H ldapi:// -Y EXTRENAL < inicial.ldif 
+  592  ldapmodify -H ldapi:// < inicial.ldif 
+  593  vi inicial.ldif 
+  594  cp inicial.ldif inicial2.ldif 
+  595  ci inicial2.ldif 
+  596  vi inicial2.ldif 
+  597  ldapmodify -H ldapi:// < inicial2.ldif 
+  598  journalctl -xn
+  599  cat /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}hdb.ldif 
+  600  vi inicial2.ldif 
+  601  ldapmodify -H ldapi:// < inicial2.ldif 
+  602  vi inicial2.ldif 
+  603  ldapmodify -H ldapi:// < inicial2.ldif 
+  604  ldapsearch -x -D cn=Manager-W
+  605  ldapsearch -x -D cn=Manager -W
+  606  ldapsearch -x -D cn=Manager 
+  607  cp inicial.ldif inicial3.ldif
+  608  vi inicial3.ldif 
+  609  ldapmodify -H ldapi:// < inicial3.ldif 
+  610  vi inicial2.ldif 
+  611  ldapmodify -H ldapi:// < inicial2.ldif 
+  612  cat inicial2.ldif 
+  613  vi inicial2.ldif 
+  614  ldapmodify -H ldapi:// < inicial2.ldif 
+  615  cat /etc/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}hdb.ldif 
+  616  ldapsearch -x -D cn=Manager,dc=my-domain,dc=com
+  617  ldapsearch -x -D cn=Manager,dc=my-domain,dc=com -W
+  618  vi inicial3.ldif 
+  619  ldapmodify -H ldapi:// < inicial3.ldif 
+  620  systemctl stop slapd
+  621  vi /etc/openldap/ldap.conf 
+  622  man yum
+  623  man rpm
+  624  systemctl start slapd
+  625  journalctl -xn
+  626  systemctl stop slapd
+  627  vi /usr/share/openldap-servers/DB_CONFIG.example
+  628  cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+  629  systemctl start slapd
+  630  journalctl -xn
+  631  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+  632  vi /etc/openldap/schema/nis.ldif 
+  633  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+  634  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif 
+  635  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+  636  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif 
+  637  cd /tmp/
+  638  vi domain.ldif
+  639  vi domain.ldif
+  640  cd /tmp/
+  641  vi domain.ldif
+  642  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif 
+  643  vi domain.ldif
+  644  cat /etc/openldap/schema/inetorgperson.ldif | grep 2.16.840.1.113730.3.1.
+  645  vi /etc/openldap/schema/inetorgperson.ldif
+  646  vi domain.ldif
+  647  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  648  vi basedomain.ldif
+  649  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  650  systemctl restart slapd
+  651  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  652  ldapsearch -D cn=Manager,dc=oriolir,dc=info
+  653  ldapsearch 
+  654  journalctl -xn
+  655  systemctl restart slapd
+  656  journalctl -xn
+  657  ldapsearch 
+  658  systemctl stop slapd
+  659  journalctl -xn
+  660  db_recover 
+  661  systemctl start slapd
+  662  journalctl -xn
+  663  ldapsearch 
+  664  cp basedomain.ldif basedomain2.ldif 
+  665  vi basedomain2.ldif 
+  666  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain2.ldif 
+  667  vi domain.ldif 
+  668  systemctl start slapd
+  669  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  670  vi domain.ldif 
+  671  cp domain.ldif domain2.ldif 
+  672  vi domain2.ldif 
+  673  history | grep domain
+  674  history | grep nis
+  675  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  676  ldapadd -Y EXTERNAL -H ldapi:/// -f domain2.ldif 
+  677  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  678  vi domain.ldif 
+  679  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  680  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  681  vi domain.ldif 
+  682  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  683  vi domain.ldif 
+  684  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  685  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  686  ps -fea | grep ldap
+  687  ll /var/lib/ldap/
+  688  tail -f /var/lib/ldap/log.0000000001 
+  689  tail -f /var/log/lastlog 
+  690  tail -f /var/log/messages
+  691  bg
+  692  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  693  dmesg 
+  694  journalctl -xn
+  695  bg
+  696  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  697  fg
+  698  journalctl -xn
+  699  man journal
+  700  man journalctl
+  701  journalctl -f
+  702  bg
+  703  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  704  fg
+  705  bg
+  706  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  707  ldapadd -Y EXTERNAL -H ldapi:/// -f basedomain.ldif 
+  708  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  709  slappasswd 
+  710  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  711  vi domain.ldif 
+  712  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  713  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  714  ldappasswd 
+  715  systemctl status slapd
+  716  systemctl restart slapd
+  717  ldappasswd 
+  718  ldapadd -Y EXTERNAL -H ldapi:/// -f domain.ldif 
+  719  vi domain2.ldif 
+  720  ldappasswd 
+  721  init 6
+  722  ldappasswd 
+  723  ps -fea | grep ldap
+  724  init 0
+  725  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  726  cd /tmp
+  727  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f basedomain.ldif 
+  728  init 0
+  729  cd /tmp/
+  730  slappasswd 
+  731  ll
+  732  vi 1chrootpw.ldif
+  733  ldapadd -Y EXTERNAL -H ldapi:/// -f 1chrootpw.ldif 
+  734  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif 
+  735  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+  736  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif 
+  737  slappasswd 
+  738  vi 2chdomain.ldif
+  739  ldapmodify -Y EXTERNAL _H ldapi:/// 2chdomain.ldif 
+  740  ldapmodify -Y EXTERNAL -H ldapi:/// 2chdomain.ldif 
+  741  ldapmodify -Y EXTERNAL -H ldapi:/// -f 2chdomain.ldif 
+  742  vi 3 basedomain.ldif
+  743  cp 3 3basedomain.ldif 
+  744  cat 3basedomain.ldif 
+  745  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f 3basedomain.ldif 
+  746  slappasswd 
+  747  vi 4addusers.ldif
+  748  ldapadd -x -D cn=Manager,dc=oriolir,dc=info -W -f 4addusers.ldif 
+  749  init 6
+  750  ldappasswd 
+  751  yum erase openldap-server
+  752  yum erase openldap-servers
+  753  yum erase openldap-clients
+  754  rm -f /etc/openldap/
+  755  rm -rf /etc/openldap/
+  756  rm -rf /var/lib/ldap/
+  757  systemctl status slapd
+  758  systemctl disable slapd
+  759  systemctl start slapd
+  760  yum install openldap-servers openldap-clients
+  761  cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+  762  chown ldap. /var/lib/ldap/DB_CONFIG 
+  763  systemctl start slapd
+  764  systemctl enable slapd
+  765  slappasswd 
+  766  init 0
+  767  init 6
+  768  ll /var/log/audit/audit.log 
+  769  tail
+  770  tail -f /var/log/audit/audit.log 
+  771  cat /var/log/messages
+  772  cat /var/log/secure
+  773  tail -f /var/log/secure
+  774  vim /etc/openldap/ldap.conf 
+  775  vi /etc/openldap/ldap.conf 
+  776  vi /etc/openldap/check_password.conf 
+  777  vi /etc/selinux/config 
+  778  vi /etc/rsyslog.conf 
+  779  tail -f /var/log/secure
+  780  ps -fea | grep bind
+  781  ps -fea
+  782  dig ubuntu.com
+  783  systemctl restart named
+  784  journalctl -xn
+  785  dig www.ubuntu.com
+  786  ping 8.8.8.8
+  787  vi /etc/named.conf 
+  788  nslookup 
+  789  nslookup www.ubuntu.com
+  790  vi /etc/named.conf 
+  791  systemctl restart named
+  792  dig www.ubuntu.com
+  793  systemctl restart dhcpd
+  794  journalctl -xn
+  795  history
+  796  yum install openldap-clients nss-pam-ldap
+  797  yum install openldap-clients nss-pam-ldapd
+  798  authconfig-tui 
+  799  systemctl restart nssd
+  800  systemctl restart nscd
+  801  su - test1
+  802  login
+  803  init 0
+  804  history | grep oriolir
+  805  history | grep oriolir | less
+  806  vi /var/named/slaves/oriolir
+  807  vi /var/named/slaves/0.0.10.db 
+  808  systemctl restart named
+  809  dig nagios
+  810  dig nagios.oriolir.info
+  811  vi /etc/resolv.conf 
+  812  ping -c 4 nagios
+  813  exit
+  814  init 0
+  815  history
+  816  history | less
+  817  mkdir /git
+  818  cd /git/
+  819  yum install git
+  820  git config --global user.name "oriolir"
+  821  git config --global user.email "oriol@oriolir.xyz"
+  822  git config --list
+  823  git remote add sysadmin https://github.com/AprendizMAC/Sysadmin.git
+  824  git remote add origin https://github.com/AprendizMAC/Sysadmin.git
+  825  git remote add sysadmin https://github.com/AprendizMAC/Sysadmin.git
+  826  nslookup github.com
+  827  route -n
+  828  git remote add origin https://github.com/AprendizMAC/Sysadmin.git
+  829  mkdir sysadmin
+  830  cd sysadmin/
+  831  git remote add sysadmin https://github.com/AprendizMAC/Sysadmin.git
+  832  git init
+  833  git remote add sysadmin https://github.com/AprendizMAC/Sysadmin.git
+  834  ll
+  835  git remote -v
+  836  git add .
+  837  git commit -m "Initial" -a
+  838  git push sysadmin master
+  839  cp /etc/dhcp/dhcpd.conf .
+  840  ll
+  841  git push sysadmin master
+  842  git branch -a
+  843  man git
+  844  git remote -a
+  845  git remote remove sysadmin
+  846  git remote -v
+  847  git remote add sysadmin https://github.com/oriolir/Sysadmin.git
+  848  git remote -v
+  849  git clone sysadmin
+  850  ll
+  851  git remote show sysadmin
+  852  vi ~/.gitconfig 
+  853  git clone sysadmin
+  854  git clone https://github.com/oriolir/Sysadmin.git
+  855  ll
+  856  cd Sysadmin/
+  857  ll
+  858  git status
+  859  cd ..
+  860  git status
+  861  git remove .
+  862  git
+  863  git status
+  864  cp dhcpd.conf Sysadmin/
+  865  cd Sysadmin/
+  866  git status
+  867  git add .
+  868  git status
+  869  ll /etc/named*
+  870  vi /etc/named.conf 
+  871  vi /etc/named.iscdlv.key 
+  872  vi /etc/named.oriolir.info.key 
+  873  vi /etc/named.key 
+  874  vi /etc/named.r
+  875  vi /etc/named.root.key 
+  876  :q
+  877  cp /etc/named.conf 
+  878  cp /etc/named.conf .
+  879  cp /etc/named.oriolir.info.key .
+  880  cp /var/named/slaves/oriolir /var/named/slaves/0.0.10.db .
+  881  ll
+  882  ps -fea
+  883  history  grep ldap
+  884* history|  g
+  885  history |  grep ldap | less
+  886  cp /etc/openldap/ldap.conf .
+  887  vi /etc/openldap/check_password.conf 
+  888  history
+  889  git add .
+  890  git status
+  891  git push sysadmin -a
+  892  git push sysadmin master
+  893  git add .
+  894  git status
+  895  git commit -m "Ficheros antiguos"
+  896  git push sysadmin master
+  897  git remote -v
+  898  git push origin master
+  899  history | less
+  900  history > history.txt
