@@ -1,0 +1,14 @@
+$ORIGIN .
+$TTL 10800	; 3 hours
+oriolir.xyz		IN SOA	dhcp.oriolir.xyz. admin.oriolir.xyz. (
+				3          ; serial
+				86400      ; refresh (1 day)
+				3600       ; retry (1 hour)
+				604800     ; expire (1 week)
+				10800      ; minimum (3 hours)
+				)
+			NS	dhcp.oriolir.xyz.
+$ORIGIN oriolir.xyz.
+dhcp			A	10.0.0.2
+firewall		A	10.0.0.1
+router			CNAME	firewall

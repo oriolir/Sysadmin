@@ -1,0 +1,11 @@
+$TTL 3H
+@	IN SOA	0.0.10.in-addr.arpa. admin.oriolir.xyz. (
+					1	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+	IN	NS	dhcp.oriolir.xyz.
+
+1	IN	PTR	firewall.oriolir.xyz.
+2	IN	PTR	dhcp.oriolir.xyz.
